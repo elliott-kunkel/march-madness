@@ -1,5 +1,6 @@
 // ============================================================
 // 2026 NCAA March Madness Tournament Data
+// Elliott Kunkel's Bracket
 // ============================================================
 
 const TOURNAMENT_DATA = {
@@ -43,203 +44,207 @@ const TOURNAMENT_DATA = {
   },
 
   // All 4 regions with seeded teams
-  // Teams are ordered for bracket matchups: 1v16, 8v9, 5v12, 4v13, 6v11, 3v14, 7v10, 2v15
+  // Teams ordered for bracket matchups: 1v16, 8v9, 5v12, 4v13, 6v11, 3v14, 7v10, 2v15
   regions: {
     east: {
       name: "East",
       teams: [
-        { seed: 1,  name: "Duke",            record: "32-2" },
-        { seed: 16, name: "Siena",           record: "" },
-        { seed: 8,  name: "Ohio State",      record: "" },
-        { seed: 9,  name: "TCU",             record: "" },
-        { seed: 5,  name: "St. John's",      record: "" },
-        { seed: 12, name: "Cal Baptist",     record: "" },
-        { seed: 4,  name: "Kansas",          record: "" },
-        { seed: 13, name: "East 13 Seed",    record: "" },
-        { seed: 6,  name: "Louisville",      record: "" },
-        { seed: 11, name: "South Florida",   record: "" },
-        { seed: 3,  name: "Michigan State",  record: "" },
-        { seed: 14, name: "East 14 Seed",    record: "" },
-        { seed: 7,  name: "UCLA",            record: "" },
-        { seed: 10, name: "UCF",             record: "" },
-        { seed: 2,  name: "UConn",           record: "" },
-        { seed: 15, name: "East 15 Seed",    record: "" }
+        { seed: 1,  name: "Duke" },
+        { seed: 16, name: "Siena" },
+        { seed: 8,  name: "Ohio State" },
+        { seed: 9,  name: "TCU" },
+        { seed: 5,  name: "St. John's" },
+        { seed: 12, name: "Northern Iowa" },
+        { seed: 4,  name: "Kansas" },
+        { seed: 13, name: "Cal Baptist" },
+        { seed: 6,  name: "Louisville" },
+        { seed: 11, name: "South Florida" },
+        { seed: 3,  name: "Michigan State" },
+        { seed: 14, name: "North Dakota St." },
+        { seed: 7,  name: "UCLA" },
+        { seed: 10, name: "UCF" },
+        { seed: 2,  name: "UConn" },
+        { seed: 15, name: "Furman" }
       ]
     },
     south: {
       name: "South",
       teams: [
-        { seed: 1,  name: "Arizona",         record: "32-2" },
-        { seed: 16, name: "South 16 Seed",   record: "" },
-        { seed: 8,  name: "South 8 Seed",    record: "" },
-        { seed: 9,  name: "South 9 Seed",    record: "" },
-        { seed: 5,  name: "Texas Tech",      record: "" },
-        { seed: 12, name: "Akron",           record: "" },
-        { seed: 4,  name: "Alabama",         record: "" },
-        { seed: 13, name: "Hawaii",          record: "" },
-        { seed: 6,  name: "BYU",             record: "" },
-        { seed: 11, name: "Texas/NC State",  record: "" },
-        { seed: 3,  name: "Illinois",        record: "" },
-        { seed: 14, name: "South 14 Seed",   record: "" },
-        { seed: 7,  name: "South 7 Seed",    record: "" },
-        { seed: 10, name: "South 10 Seed",   record: "" },
-        { seed: 2,  name: "Houston",         record: "" },
-        { seed: 15, name: "South 15 Seed",   record: "" }
-      ]
-    },
-    midwest: {
-      name: "Midwest",
-      teams: [
-        { seed: 1,  name: "Michigan",          record: "31-3" },
-        { seed: 16, name: "Midwest 16 Seed",   record: "" },
-        { seed: 8,  name: "Midwest 8 Seed",    record: "" },
-        { seed: 9,  name: "Midwest 9 Seed",    record: "" },
-        { seed: 5,  name: "Vanderbilt",        record: "" },
-        { seed: 12, name: "Midwest 12 Seed",   record: "" },
-        { seed: 4,  name: "Arkansas",          record: "" },
-        { seed: 13, name: "Midwest 13 Seed",   record: "" },
-        { seed: 6,  name: "Midwest 6 Seed",    record: "" },
-        { seed: 11, name: "Midwest 11 Seed",   record: "" },
-        { seed: 3,  name: "Gonzaga",           record: "" },
-        { seed: 14, name: "Midwest 14 Seed",   record: "" },
-        { seed: 7,  name: "Midwest 7 Seed",    record: "" },
-        { seed: 10, name: "Midwest 10 Seed",   record: "" },
-        { seed: 2,  name: "Iowa State",        record: "" },
-        { seed: 15, name: "Tennessee State",   record: "" }
+        { seed: 1,  name: "Florida" },
+        { seed: 16, name: "Prairie View A&M" },
+        { seed: 8,  name: "Clemson" },
+        { seed: 9,  name: "Iowa" },
+        { seed: 5,  name: "Vanderbilt" },
+        { seed: 12, name: "McNeese" },
+        { seed: 4,  name: "Nebraska" },
+        { seed: 13, name: "Troy" },
+        { seed: 6,  name: "North Carolina" },
+        { seed: 11, name: "VCU" },
+        { seed: 3,  name: "Illinois" },
+        { seed: 14, name: "Penn" },
+        { seed: 7,  name: "Saint Mary's" },
+        { seed: 10, name: "Texas A&M" },
+        { seed: 2,  name: "Houston" },
+        { seed: 15, name: "Idaho" }
       ]
     },
     west: {
       name: "West",
       teams: [
-        { seed: 1,  name: "Florida",         record: "26-7" },
-        { seed: 16, name: "West 16 Seed",    record: "" },
-        { seed: 8,  name: "Villanova",       record: "" },
-        { seed: 9,  name: "Utah State",      record: "" },
-        { seed: 5,  name: "West 5 Seed",     record: "" },
-        { seed: 12, name: "West 12 Seed",    record: "" },
-        { seed: 4,  name: "West 4 Seed",     record: "" },
-        { seed: 13, name: "West 13 Seed",    record: "" },
-        { seed: 6,  name: "West 6 Seed",     record: "" },
-        { seed: 11, name: "West 11 Seed",    record: "" },
-        { seed: 3,  name: "Virginia",        record: "" },
-        { seed: 14, name: "West 14 Seed",    record: "" },
-        { seed: 7,  name: "Miami",           record: "" },
-        { seed: 10, name: "Missouri",        record: "" },
-        { seed: 2,  name: "Purdue",          record: "" },
-        { seed: 15, name: "West 15 Seed",    record: "" }
+        { seed: 1,  name: "Arizona" },
+        { seed: 16, name: "LIU" },
+        { seed: 8,  name: "Villanova" },
+        { seed: 9,  name: "Utah State" },
+        { seed: 5,  name: "Wisconsin" },
+        { seed: 12, name: "High Point" },
+        { seed: 4,  name: "Arkansas" },
+        { seed: 13, name: "Hawaii" },
+        { seed: 6,  name: "BYU" },
+        { seed: 11, name: "Texas" },
+        { seed: 3,  name: "Gonzaga" },
+        { seed: 14, name: "Kennesaw St." },
+        { seed: 7,  name: "Miami" },
+        { seed: 10, name: "Missouri" },
+        { seed: 2,  name: "Purdue" },
+        { seed: 15, name: "Queens" }
+      ]
+    },
+    midwest: {
+      name: "Midwest",
+      teams: [
+        { seed: 1,  name: "Michigan" },
+        { seed: 16, name: "Howard" },
+        { seed: 8,  name: "Georgia" },
+        { seed: 9,  name: "Saint Louis" },
+        { seed: 5,  name: "Texas Tech" },
+        { seed: 12, name: "Akron" },
+        { seed: 4,  name: "Alabama" },
+        { seed: 13, name: "Hofstra" },
+        { seed: 6,  name: "Tennessee" },
+        { seed: 11, name: "Miami (OH)" },
+        { seed: 3,  name: "Virginia" },
+        { seed: 14, name: "Wright State" },
+        { seed: 7,  name: "Kentucky" },
+        { seed: 10, name: "Santa Clara" },
+        { seed: 2,  name: "Iowa State" },
+        { seed: 15, name: "Tennessee State" }
       ]
     }
   },
 
-  // User's bracket picks for each round
+  // Elliott's bracket picks for each round
   // Format: region_round_game
   userPicks: {
-    // EAST - Round of 64 (8 games: 1v16, 8v9, 5v12, 4v13, 6v11, 3v14, 7v10, 2v15)
+    // ========== EAST ==========
+    // R64: 1v16, 8v9, 5v12, 4v13, 6v11, 3v14, 7v10, 2v15
     east_1_1: "Duke",
-    east_1_2: "Ohio State",
+    east_1_2: "TCU",
     east_1_3: "St. John's",
     east_1_4: "Kansas",
     east_1_5: "Louisville",
     east_1_6: "Michigan State",
-    east_1_7: "UCLA",
+    east_1_7: "UCF",
     east_1_8: "UConn",
-    // EAST - Round of 32
-    east_2_1: "Duke",
-    east_2_2: "Kansas",
-    east_2_3: "Michigan State",
-    east_2_4: "UConn",
-    // EAST - Sweet 16
-    east_3_1: "Duke",
-    east_3_2: "UConn",
-    // EAST - Elite 8
-    east_4_1: "Duke",
+    // R32
+    east_2_1: "Duke",          // Duke vs TCU
+    east_2_2: "St. John's",    // St. John's vs Kansas
+    east_2_3: "Michigan State", // Louisville vs Michigan State
+    east_2_4: "UConn",         // UCF vs UConn
+    // Sweet 16
+    east_3_1: "Duke",          // Duke vs St. John's
+    east_3_2: "UConn",         // Michigan State vs UConn
+    // Elite 8
+    east_4_1: "UConn",         // Duke vs UConn
 
-    // SOUTH - Round of 64
-    south_1_1: "Arizona",
-    south_1_2: "South 8 Seed",
-    south_1_3: "Texas Tech",
-    south_1_4: "Alabama",
-    south_1_5: "BYU",
+    // ========== SOUTH ==========
+    // R64: 1v16, 8v9, 5v12, 4v13, 6v11, 3v14, 7v10, 2v15
+    south_1_1: "Florida",
+    south_1_2: "Iowa",
+    south_1_3: "McNeese",       // 12 over 5 upset
+    south_1_4: "Nebraska",
+    south_1_5: "VCU",           // 11 over 6 upset
     south_1_6: "Illinois",
-    south_1_7: "South 7 Seed",
+    south_1_7: "Texas A&M",
     south_1_8: "Houston",
-    // SOUTH - Round of 32
-    south_2_1: "Arizona",
-    south_2_2: "Alabama",
-    south_2_3: "Illinois",
-    south_2_4: "Houston",
-    // SOUTH - Sweet 16
-    south_3_1: "Arizona",
-    south_3_2: "Houston",
-    // SOUTH - Elite 8
-    south_4_1: "Houston",
+    // R32
+    south_2_1: "Florida",      // Florida vs Iowa
+    south_2_2: "McNeese",      // McNeese vs Nebraska (12 seed run!)
+    south_2_3: "VCU",          // VCU vs Illinois
+    south_2_4: "Houston",      // Texas A&M vs Houston
+    // Sweet 16
+    south_3_1: "Florida",      // Florida vs McNeese
+    south_3_2: "Houston",      // VCU vs Houston
+    // Elite 8
+    south_4_1: "Houston",      // Florida vs Houston
 
-    // MIDWEST - Round of 64
-    midwest_1_1: "Michigan",
-    midwest_1_2: "Midwest 8 Seed",
-    midwest_1_3: "Vanderbilt",
-    midwest_1_4: "Arkansas",
-    midwest_1_5: "Midwest 6 Seed",
-    midwest_1_6: "Gonzaga",
-    midwest_1_7: "Midwest 7 Seed",
-    midwest_1_8: "Iowa State",
-    // MIDWEST - Round of 32
-    midwest_2_1: "Michigan",
-    midwest_2_2: "Arkansas",
-    midwest_2_3: "Gonzaga",
-    midwest_2_4: "Iowa State",
-    // MIDWEST - Sweet 16
-    midwest_3_1: "Michigan",
-    midwest_3_2: "Iowa State",
-    // MIDWEST - Elite 8
-    midwest_4_1: "Michigan",
-
-    // WEST - Round of 64
-    west_1_1: "Florida",
-    west_1_2: "Villanova",
-    west_1_3: "West 5 Seed",
-    west_1_4: "West 4 Seed",
-    west_1_5: "West 6 Seed",
-    west_1_6: "Virginia",
-    west_1_7: "Miami",
+    // ========== WEST ==========
+    // R64: 1v16, 8v9, 5v12, 4v13, 6v11, 3v14, 7v10, 2v15
+    west_1_1: "Arizona",
+    west_1_2: "Utah State",    // 9 over 8
+    west_1_3: "Wisconsin",
+    west_1_4: "Hawaii",        // 13 over 4 upset!
+    west_1_5: "Texas",         // 11 over 6 upset
+    west_1_6: "Gonzaga",
+    west_1_7: "Missouri",      // 10 over 7
     west_1_8: "Purdue",
-    // WEST - Round of 32
-    west_2_1: "Florida",
-    west_2_2: "West 4 Seed",
-    west_2_3: "Virginia",
-    west_2_4: "Purdue",
-    // WEST - Sweet 16
-    west_3_1: "Florida",
-    west_3_2: "Purdue",
-    // WEST - Elite 8
-    west_4_1: "Florida",
+    // R32
+    west_2_1: "Arizona",       // Arizona vs Utah State
+    west_2_2: "Hawaii",        // Wisconsin vs Hawaii (13 seed run!)
+    west_2_3: "Gonzaga",       // Texas vs Gonzaga
+    west_2_4: "Purdue",        // Missouri vs Purdue
+    // Sweet 16
+    west_3_1: "Arizona",       // Arizona vs Hawaii
+    west_3_2: "Gonzaga",       // Gonzaga vs Purdue
+    // Elite 8
+    west_4_1: "Gonzaga",       // Arizona vs Gonzaga
 
-    // FINAL FOUR
-    // Semifinal 1: East vs South
-    ff_5_1: "Duke",
-    // Semifinal 2: Midwest vs West
-    ff_5_2: "Arizona",
+    // ========== MIDWEST ==========
+    // R64: 1v16, 8v9, 5v12, 4v13, 6v11, 3v14, 7v10, 2v15
+    midwest_1_1: "Michigan",
+    midwest_1_2: "Saint Louis", // 9 over 8
+    midwest_1_3: "Texas Tech",
+    midwest_1_4: "Alabama",
+    midwest_1_5: "Tennessee",
+    midwest_1_6: "Virginia",
+    midwest_1_7: "Santa Clara", // 10 over 7 upset
+    midwest_1_8: "Iowa State",
+    // R32
+    midwest_2_1: "Michigan",    // Michigan vs Saint Louis
+    midwest_2_2: "Alabama",     // Texas Tech vs Alabama
+    midwest_2_3: "Tennessee",   // Tennessee vs Virginia
+    midwest_2_4: "Iowa State",  // Santa Clara vs Iowa State
+    // Sweet 16
+    midwest_3_1: "Michigan",    // Michigan vs Alabama
+    midwest_3_2: "Tennessee",   // Tennessee vs Iowa State
+    // Elite 8
+    midwest_4_1: "Michigan",    // Michigan vs Tennessee
 
-    // CHAMPIONSHIP
-    ff_6_1: "Arizona"
+    // ========== FINAL FOUR ==========
+    // Semi 1: East vs South
+    ff_5_1: "Houston",          // UConn vs Houston
+    // Semi 2: West vs Midwest
+    ff_5_2: "Michigan",         // Gonzaga vs Michigan
+
+    // ========== CHAMPIONSHIP ==========
+    ff_6_1: "Michigan"          // Houston vs Michigan
   },
 
   // Final Four display picks
   finalFourPicks: {
-    east: "Duke",
+    east: "UConn",
     south: "Houston",
-    midwest: "Michigan",
-    west: "Florida"
+    west: "Gonzaga",
+    midwest: "Michigan"
   },
 
-  // Championship: Arizona over Duke
+  // Championship: Michigan over Houston
   championshipMatchup: {
-    team1: "Duke",
-    team2: "Arizona",
-    pick: "Arizona"
+    team1: "Houston",
+    team2: "Michigan",
+    pick: "Michigan"
   },
 
-  championPick: "Arizona",
+  championPick: "Michigan",
 
   // Actual results - filled in as games are played
   // Format: { winner: "Team", loser: "Team", winnerScore: 75, loserScore: 68, completed: true }
