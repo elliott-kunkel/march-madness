@@ -147,11 +147,11 @@ const TOURNAMENT_DATA = {
     east_1_8: "UConn",
     // R32
     east_2_1: "Duke",          // Duke vs TCU
-    east_2_2: "St. John's",    // St. John's vs Kansas
+    east_2_2: "Kansas",         // St. John's vs Kansas
     east_2_3: "Michigan State", // Louisville vs Michigan State
     east_2_4: "UConn",         // UCF vs UConn
     // Sweet 16
-    east_3_1: "Duke",          // Duke vs St. John's
+    east_3_1: "Duke",          // Duke vs Kansas
     east_3_2: "UConn",         // Michigan State vs UConn
     // Elite 8
     east_4_1: "UConn",         // Duke vs UConn
@@ -169,11 +169,11 @@ const TOURNAMENT_DATA = {
     // R32
     south_2_1: "Florida",      // Florida vs Iowa
     south_2_2: "McNeese",      // McNeese vs Nebraska (12 seed run!)
-    south_2_3: "VCU",          // VCU vs Illinois
+    south_2_3: "Illinois",     // VCU vs Illinois
     south_2_4: "Houston",      // Texas A&M vs Houston
     // Sweet 16
     south_3_1: "Florida",      // Florida vs McNeese
-    south_3_2: "Houston",      // VCU vs Houston
+    south_3_2: "Houston",      // Illinois vs Houston
     // Elite 8
     south_4_1: "Houston",      // Florida vs Houston
 
