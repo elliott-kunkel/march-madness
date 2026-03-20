@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My 2026 March Madness Bracket</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏀</text></svg>">
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <div class="container">
+      <h1><span class="icon">🏀</span> My 2026 March Madness Bracket</h1>
+      <p class="subtitle">Personal Bracket Tracker &mdash; NCAA Division I Men's Basketball Tournament</p>
+      <div class="header-meta">
+        <span>📅 Tournament: March 17 &ndash; April 6, 2026</span>
+        <span id="last-updated">🕐 Last updated: --</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ===== My Picks Banner ===== -->
+    <section class="picks-banner">
+      <h2>🎯 My Picks</h2>
+      <div class="picks-grid">
+        <div class="pick-card" id="pick-east">
+          <div class="label">East &rarr; Final Four</div>
+          <div class="team-name" id="pick-east-team">Duke</div>
+        </div>
+        <div class="pick-card" id="pick-south">
+          <div class="label">South &rarr; Final Four</div>
+          <div class="team-name" id="pick-south-team">Houston</div>
+        </div>
+        <div class="pick-card" id="pick-midwest">
+          <div class="label">Midwest &rarr; Final Four</div>
+          <div class="team-name" id="pick-midwest-team">Michigan</div>
+        </div>
+        <div class="pick-card" id="pick-west">
+          <div class="label">West &rarr; Final Four</div>
+          <div class="team-name" id="pick-west-team">Florida</div>
+        </div>
+        <div class="pick-card championship-game" id="pick-championship">
+          <div class="label">Championship</div>
+          <div class="team-name" id="pick-championship-team">Arizona vs Duke</div>
+        </div>
+        <div class="pick-card champion" id="pick-champion">
+          <div class="label">🏆 National Champion</div>
+          <div class="team-name" id="pick-champion-team">Arizona</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Scoreboard ===== -->
+    <section class="scoreboard" id="scoreboard">
+      <div class="stat-card points">
+        <div class="stat-value" id="stat-points">0</div>
+        <div class="stat-label">Total Points</div>
+      </div>
+      <div class="stat-card correct">
+        <div class="stat-value" id="stat-correct">0</div>
+        <div class="stat-label">Correct Picks</div>
+      </div>
+      <div class="stat-card wrong">
+        <div class="stat-value" id="stat-wrong">0</div>
+        <div class="stat-label">Wrong Picks</div>
+      </div>
+      <div class="stat-card pending">
+        <div class="stat-value" id="stat-pending">63</div>
+        <div class="stat-label">Pending</div>
+      </div>
+      <div class="stat-card alive">
+        <div class="stat-value" id="stat-alive">63</div>
+        <div class="stat-label">Picks Still Alive</div>
+      </div>
+      <div class="stat-card" style="--stat-color: var(--text-primary);">
+        <div class="stat-value" id="stat-max">1920</div>
+        <div class="stat-label">Max Possible</div>
+      </div>
+    </section>
+
+    <!-- ===== Progress Bar ===== -->
+    <div class="progress-wrap">
+      <div class="progress-label">
+        <span>Tournament Progress</span>
+        <span id="progress-pct">0%</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill" style="width: 0%;"></div>
+      </div>
+    </div>
+
+    <!-- ===== Toolbar ===== -->
+    <div class="toolbar">
+      <button class="btn" id="btn-edit" onclick="toggleEditMode()">✏️ Edit Picks</button>
+      <button class="btn" id="btn-results" onclick="toggleResultsMode()">📊 Enter Results</button>
+      <button class="btn danger" id="btn-reset" onclick="resetData()">🔄 Reset All</button>
+    </div>
+
+    <!-- ===== Regional Brackets ===== -->
+    <div class="bracket-container">
+      <div class="bracket" id="bracket">
+        <!-- Regions are built dynamically by app.js -->
+      </div>
+    </div>
+
+    <!-- ===== Final Four ===== -->
+    <section class="final-four-section" id="final-four-section">
+      <h2>🏟️ Final Four &amp; Championship</h2>
+      <div class="ff-bracket" id="ff-bracket">
+        <!-- Built dynamically -->
+      </div>
+      <div class="champion-badge" id="champion-badge">
+        <div class="trophy">🏆</div>
+        <div class="champ-label">National Champion Pick</div>
+        <div class="champ-name" id="champion-name">Arizona</div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Score Entry Modal ===== -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal" id="score-modal">
+      <h3 id="modal-title">Enter Game Result</h3>
+      <div id="modal-body">
+        <label id="modal-team1-label">Team 1</label>
+        <input type="number" id="modal-score1" placeholder="Score" min="0">
+        <label id="modal-team2-label">Team 2</label>
+        <input type="number" id="modal-score2" placeholder="Score" min="0">
+      </div>
+      <div class="modal-actions">
+        <button class="btn" onclick="closeModal()">Cancel</button>
+        <button class="btn primary" onclick="submitResult()">Save Result</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Toast ===== -->
+  <div class="toast" id="toast"></div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <p>🏀 2026 NCAA March Madness Personal Bracket Tracker</p>
+    <p style="margin-top:.25rem;">Not affiliated with the NCAA. For personal use only.</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
