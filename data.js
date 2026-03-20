@@ -15,14 +15,14 @@ const TOURNAMENT_DATA = {
     championship: "April 6"
   },
 
-  // Scoring system (ESPN standard)
+  // Scoring system (CBS Sports standard — 1-2-4-8-16-32)
   scoring: {
-    1: 10,   // Round of 64
-    2: 20,   // Round of 32
-    3: 40,   // Sweet 16
-    4: 80,   // Elite 8
-    5: 160,  // Final Four
-    6: 320   // Championship
+    1: 1,    // Round of 64
+    2: 2,    // Round of 32
+    3: 4,    // Sweet 16
+    4: 8,    // Elite 8
+    5: 16,   // Final Four
+    6: 32    // Championship
   },
 
   roundNames: {
