@@ -18,12 +18,6 @@
     updateTimestamp();
   });
 
-  // Re-render when live scores update
-  window.addEventListener("live-scores-updated", () => {
-    state = loadState();
-    renderAll();
-  });
-
   // ---- State Persistence ----
   function loadState() {
     try {

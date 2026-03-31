@@ -561,30 +561,6 @@ body.edit-mode .game-team:hover {
   .round { min-width: 130px; }
 }
 
-/* --- Live Status Indicator --- */
-.live-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  display: inline-block;
-  flex-shrink: 0;
-}
-.live-dot.live {
-  background: var(--green);
-  box-shadow: 0 0 6px var(--green);
-  animation: pulse 1.5s ease-in-out infinite;
-}
-.live-dot.idle {
-  background: var(--text-muted);
-}
-.live-dot.error {
-  background: var(--red);
-}
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.4; }
-}
-
 /* --- Animation --- */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(8px); }
